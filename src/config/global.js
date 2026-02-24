@@ -1,8 +1,9 @@
 export default {
   global: {
-    Name: 'Nombre del recurso educativo',
-    Description: 'Descripción del RED',
-    imagenBannerPrincipal: require('@/assets/curso/portada/banner-principal.svg'),
+    componenteFormativo: 'Generalidades de los eventos empresariales',
+    descripcionCurso:
+      'Los eventos empresariales representan la manera organizada y estructurada de establecer la comunicación con los grupos de interés, permiten presentar los productos y servicios, establecer y fortalecer la imagen corporativa de la empresa y alcanzar la fidelización de los mismos.',
+    imagenBannerPrincipal: require('@/assets/curso/portada/banner-princiapal.svg'),
     fondoBannerPrincipal: require('@/assets/curso/portada/fondo-banner-principal.png'),
     imagenesDecorativasBanner: [
       {
@@ -12,6 +13,10 @@ export default {
       {
         clases: ['banner-principal-decorativo-2'],
         imagen: require('@/assets/curso/portada/banner-principal-decorativo-2.svg'),
+      },
+      {
+        clases: ['banner-principal-decorativo-3'],
+        imagen: require('@/assets/curso/portada/banner-principal-decorativo-3.svg'),
       },
     ],
   },
@@ -24,34 +29,38 @@ export default {
       },
       {
         nombreRuta: 'introduccion',
-        icono: 'fas fa-info-circle',
+        icono: 'fas fa-info',
         titulo: 'Introducción',
         desarrolloContenidos: true,
       },
       {
         nombreRuta: 'tema1',
         numero: '1',
-        titulo: 'Tema 1',
+        titulo: 'Eventos',
         desarrolloContenidos: true,
-        subMenu: [
-          {
-            numero: '1.1',
-            titulo: 'Subtema 1',
-            hash: 't_1_1',
-          },
-        ],
       },
-
       {
         nombreRuta: 'tema2',
         numero: '2',
-        titulo: 'Tema 2',
+        titulo: 'Comité de eventos',
         desarrolloContenidos: true,
       },
       {
         nombreRuta: 'tema3',
         numero: '3',
-        titulo: 'Tema 3',
+        titulo: 'Logística en eventos',
+        desarrolloContenidos: true,
+      },
+      {
+        nombreRuta: 'tema4',
+        numero: '4',
+        titulo: 'Técnicas de recolección de información',
+        desarrolloContenidos: true,
+      },
+      {
+        nombreRuta: 'tema5',
+        numero: '5',
+        titulo: 'Trazabilidad del servicio',
         desarrolloContenidos: true,
       },
     ],
@@ -86,7 +95,7 @@ export default {
       {
         icono: 'fas fa-file-pdf',
         titulo: 'Descargar PDF',
-        download: 'downloads/dist.pdf',
+        download: 'downloads/122153_CF08_DU.pdf',
       },
       {
         icono: 'fas fa-download',
@@ -102,90 +111,215 @@ export default {
   },
   complementario: [
     {
-      tema: '',
-      referencia: '',
-      tipo: 'Sitio web',
-      link: '',
+      tema: 'Eventos',
+      referencia:
+        'Cordero López, L. (2016). <em>Organización de eventos como herramienta de comunicación interna: Avon Cosmetics España</em> [Trabajo de grado]. Universidad de Sevilla.',
+      tipo: 'PDF',
+      link: 'https://idus.us.es/items/3748dcfb-6792-48aa-a949-7db89b5a01cd?ut=',
+    },
+    {
+      tema: 'Eventos',
+      referencia:
+        'Arias, R. (2016). <em>Etapas de un Evento</em> (video). YouTube.',
+      tipo: 'Video',
+      link: 'https://www.youtube.com/watch?v=Ho6xhcnyuIw ',
+    },
+    {
+      tema: 'Logística en eventos',
+      referencia:
+        'Santander Argentina Oficial. (2018). <em>Cómo organizar un evento</em> (video). YouTube.',
+      tipo: 'Video',
+      link: 'https://www.youtube.com/watch?v=vyEfoTSYyvo ',
+    },
+    {
+      tema: 'Técnicas de recolección de información',
+      referencia:
+        'TEBAEV VIDEOS EDUCATIVOS. (2020). <em>Técnicas de recolección de datos</em> (video). YouTube.',
+      tipo: 'Video',
+      link: 'https://www.youtube.com/watch?v=b4O_XAuAmto ',
     },
   ],
   glosario: [
     {
-      termino: 'Término',
-      significado: 'Definición',
+      termino: 'Acta',
+      significado:
+        'documento que recopila todos los acontecimientos del evento y permite establecer conclusiones decisivas sobre los resultados del mismo.',
+    },
+    {
+      termino: 'Afiche',
+      significado:
+        'documento publicitario. En algunos eventos como ferias, exposiciones o seminarios, se puede utilizar publicidad física para mostrar e incentivar la participación de los grupos de interés.',
+    },
+    {
+      termino: 'Alianza',
+      significado:
+        'acuerdo entre dos involucrados (personas o empresas) que aportan sus recursos y conocimientos. En grandes eventos es necesario y conveniente trabajar en equipo.',
+    },
+    {
+      termino: 'Ambientación',
+      significado:
+        'hace referencia a la preparación o adecuación del sitio físico o virtual donde se desarrollará el evento.',
+    },
+    {
+      termino: 'Anfitrión',
+      significado:
+        'persona que convida o invita al evento. Se dice también que una empresa o país es anfitrión cuando se realiza un evento en sus instalaciones o territorio.',
+    },
+    {
+      termino: 'Base de datos',
+      significado:
+        'recopilación de información importante para la empresa o evento, documentada física o digitalmente. Las bases de datos suelen contener información o datos de contacto de los clientes.',
+    },
+    {
+      termino: '<em>Buffet</em>',
+      significado:
+        'es un mostrador para servir comidas. Este tipo de ofrecimiento se realiza en eventos empresariales como congresos, juntas o reuniones.',
+    },
+    {
+      termino: 'Comité organizador',
+      significado:
+        'conjunto de personas que debe cumplir unas funciones específicas con respecto a la organización del evento.',
+    },
+    {
+      termino: 'Conductor',
+      significado:
+        'persona que ameniza o dirige un evento. Es el encargado de dar las instrucciones generales y públicas en el desarrollo del evento.',
+    },
+    {
+      termino: 'Conferencia',
+      significado:
+        'Reunión en la que una o varias personas exponen un tema determinado, profundizado en cada aspecto para brindar un conocimiento a los oyentes.',
+    },
+    {
+      termino: 'Congreso',
+      significado:
+        'reunión de personas, generalmente limitada o cerrada y de carácter importante, en la que los miembros se encuentran para tratar temas y tomar decisiones importantes.',
+    },
+    {
+      termino: 'Evento',
+      significado: 'acontecimiento previamente organizado.',
+    },
+    {
+      termino: 'Foro',
+      significado:
+        'reunión enfocada en el intercambio de opiniones y puntos de vista por parte de los participantes.',
+    },
+    {
+      termino: 'Lanzamiento',
+      significado:
+        'presentación formal y promocional de un producto o servicio.',
+    },
+    {
+      termino: 'Moderador',
+      significado:
+        'persona que hace la apertura, marca los tiempos de participación y modela el desarrollo de los foros, las mesas redondas o los grupos focales.',
     },
   ],
   referencias: [
     {
-      referencia: '',
-      link: '',
+      referencia:
+        'Molinari, S. (2012). <em>La organización de eventos corporativos e institucionales: las claves de una organización exitosa</em>. Temas Grupo Editorial. ',
+      link:
+        'https://elibro-net.bdigital.sena.edu.co/es/lc/senavirtual/titulos/116702',
+    },
+    {
+      referencia:
+        'Panizo Alonso, J. M. y Jiménez-Morales, M. (2017). <em>Eventos y protocolo: la gestión estratégica de actos corporativos e institucionales</em>. Editorial UOC ',
+      link:
+        'https://elibro-net.bdigital.sena.edu.co/es/ereader/senavirtual/58629?page=1',
+    },
+    {
+      referencia:
+        'Ramírez Salazar, M. D. P. (2011). <em>Innovación en gestión de eventos organizacionales</em>. Ecoe Ediciones. ',
+      link:
+        'https://login.bdigital.sena.edu.co/login?qurl=https://elibro.net%2fes%2fereader%2fsenavirtual%2f69184%3fpage%3d1  ',
     },
   ],
-  creditos: [
-    {
-      titulo: 'ECOSISTEMA DE RECURSOS EDUCATIVOS DIGITALES',
-      autores: [
-        {
-          nombre: 'Nombre completo',
-          cargo: 'Responsable del ecosistema',
-          centro: 'Dirección General',
-        },
-        {
-          nombre: 'Nombre completo',
-          cargo: 'Responsable de línea de producción',
-          centro: 'Centro XYZ - Regional XYZ',
-        },
-      ],
-    },
-    {
-      titulo: 'CONTENIDO INSTRUCCIONAL',
-      autores: [
-        {
-          nombre: 'Nombre responsable',
-          cargo: 'Nombre del rol',
-          centro: 'Centro XYZ - Regional XYZ',
-        },
-      ],
-    },
-    {
-      titulo: 'DISEÑO Y DESARROLLO DE RECURSOS EDUCATIVOS DIGITALES',
-      autores: [
-        {
-          nombre: 'Nombre responsable',
-          cargo: 'Diseñador de contenidos',
-          centro: 'Centro XYZ - Regional XYZ',
-        },
-        {
-          nombre: 'Nombre responsable',
-          cargo: 'Desarrollador <i>full stack</i>',
-          centro: 'Centro XYZ - Regional XYZ',
-        },
-        {
-          nombre: 'Nombre responsable',
-          cargo: 'Animador y productor audiovisual',
-          centro: 'Centro XYZ - Regional XYZ',
-        },
-      ],
-    },
-    {
-      titulo: 'VALIDACIÓN RECURSO EDUCATIVO DIGITAL',
-      autores: [
-        {
-          nombre: 'Nombre responsable',
-          cargo: 'Validador y vinculador de recursos educativos digitales',
-          centro: 'Centro XYZ - Regional XYZ',
-        },
-        {
-          nombre: 'Nombre responsable',
-          cargo: 'Evaluador de contenidos inclusivos y accesibles',
-          centro: 'Centro XYZ - Regional XYZ',
-        },
-      ],
-    },
-  ],
-  creditosAdicionales: {
-    imagenes:
-      'Fotografías y vectores tomados de <a href="https://www.freepik.es/" target="_blank">www.freepik.es</a>, <a href="https://www.shutterstock.com/" target="_blank">www.shutterstock.com</a>, <a href="https://unsplash.com/" target="_blank">unsplash.com </a>y <a href="https://www.flaticon.com/" target="_blank">www.flaticon.com</a>',
-    creativeCommons:
-      'Licencia creative commons CC BY-NC-SA<br><a href="https://creativecommons.org/licenses/by-nc-sa/2.0/" target="_blank">ver licencia</a>',
+  creditos: {
+    liderEquipo: [
+      {
+        nombre: 'Maria Camila Garcia Santamaria',
+        cargo: 'Líder del equipo',
+        centro: 'Dirección General',
+      },
+    ],
+    contenidoInstruccional: [
+      {
+        nombre: 'Rafael Neftalí Lizcano Reyes',
+        cargo: 'Asesor metodológico y pedagógico',
+        centro:
+          'Centro Industrial del Diseño y la Manufactura - Regional Santander',
+      },
+    ],
+    desarrolloProducto: [
+      {
+        nombre: 'Francisco José Lizcano Reyes',
+        cargo: 'Responsable del equipo',
+        centro:
+          'Centro Industrial del Diseño y la Manufactura - Regional Santander',
+      },
+      {
+        nombre: 'Innovative Education',
+        cargo: 'Diseño web',
+        centro:
+          'Centro Industrial del Diseño y la Manufactura - Regional Santander',
+      },
+      {
+        nombre: 'Innovative Education',
+        cargo: 'Producción audiovisual',
+        centro:
+          'Centro Industrial del Diseño y la Manufactura - Regional Santander',
+      },
+      {
+        nombre: 'Innovative Education',
+        cargo: 'Desarrollo front-end',
+        centro:
+          'Centro Industrial del Diseño y la Manufactura - Regional Santander',
+      },
+      {
+        nombre: 'Innovative Education',
+        cargo: 'Validación de diseño y contenido',
+        centro:
+          'Centro Industrial del Diseño y la Manufactura - Regional Santander',
+      },
+    ],
+    gestoresRepositorio: [
+      {
+        nombre: 'Álvaro Andrés Angarita Ramirez',
+        cargo: 'Validación y vinculación en plataforma LMS',
+        centro: 'Centro de Comercio y Servicios - Regional Tolima',
+      },
+      {
+        nombre: 'Daniel Felipe Varón Molina',
+        cargo: 'Validación y vinculación en plataforma LMS',
+        centro: 'Centro de Comercio y Servicios - Regional Tolima',
+      },
+      {
+        nombre: 'Milady Tatiana Villamil Castellanos',
+        cargo: 'Validación y vinculación en plataforma LMS',
+        centro: 'Centro de Comercio y Servicios - Regional Tolima',
+      },
+    ],
   },
+  // creditosInicio: [
+  //   {
+  //     titulo: 'En alianza',
+  //     contenido: [
+  //       require('@/assets/template/logo-sena-naranja.svg'),
+  //       require('@/assets/template/mintic.jpg'),
+  //       require('@/assets/template/minsalud.jpg'),
+  //     ],
+  //   },
+  //   {
+  //     titulo: 'En compañía',
+  //     contenido: [
+  //       require('@/assets/template/presidencia.jpg'),
+  //       require('@/assets/template/ecopetrol.jpg'),
+  //     ],
+  //   },
+  //   {
+  //     titulo: 'Una iniciativa',
+  //     contenido: [require('@/assets/template/santander.jpg')],
+  //   },
+  // ],
 }
